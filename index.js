@@ -10,11 +10,15 @@ app.set('views', path.resolve('templates'));
 app.use("/static", express.static(path.resolve("static")));
 
 app.get("/", (req, res) => {
-    res.render('cv', {'title': 'CV', 'active': 'cv'});
+    res.render('cv', {'title': 'Резюме', 'active': 'cv'});
 });
 
 app.get("/map", (req, res) => {
-    res.render('map', {'title': 'Map', 'active': 'map'});
+    res.render('map', {'title': 'Карта', 'active': 'map'});
+});
+
+app.get("/timer", (req, res) => {
+    res.render('timer', {'title': 'Таймер', 'active': 'timer'});
 });
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}...`));
