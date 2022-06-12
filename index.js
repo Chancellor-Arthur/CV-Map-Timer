@@ -7,8 +7,6 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', path.resolve('templates'));
 
-app.use("/static", express.static(path.resolve("static")));
-
 app.get("/", (req, res) => {
     res.render('cv', {'title': 'Резюме', 'active': 'cv'});
 });
