@@ -1,7 +1,12 @@
-<%- include('partials/header'); %>
 <main id="main">
     <div id="content">
-        <%- include('partials/nav'); %>
+        <nav class="nav nav-pills nav-fill">
+            <a class="nav-link active" href="/" onclick="goToCV(); return;">Резюме</a>
+            <a class="nav-link" href="/map" onclick="goToMap(); return;">Карта</a>
+            <a class="nav-link" href="/timer" onclick="goToTimer(); return;">Таймер</a>
+        </nav>
+        <br>
+        <h1>Резюме</h1>
         <div class="row">
             <div class="col-md-9">
                 <img src="https://i.ibb.co/Z2LCfBC/85915-cyberpunk-2077-2021-games-games-hd-4k-ps-games.jpg" alt=""
@@ -36,12 +41,10 @@
                         <a href="https://github.com/Chancellor-Arthur"><img src="https://i.ibb.co/gjyb3mr/unnamed.jpg"
                                                                             alt="" style="width: 20%;"></a>
                         <a href="https://vk.com/grand_shogun"><img
-                                    src="https://i.ibb.co/3vK37KJ/5ded53183a22616ee70c96ae.png" alt=""
-                                    style="width: 20%;"></a>
+                                src="https://i.ibb.co/3vK37KJ/5ded53183a22616ee70c96ae.png" alt="" style="width: 20%;"></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </main>
-<%- include('partials/footer'); %>

@@ -1,11 +1,11 @@
 export const cv = (req, res) => {
-    res.render('base', {'title': 'Резюме', 'active': 'cv'});
+    res.render('cv', {'title': 'Резюме'});
 }
 
 export const map = (req, res) => {
-    res.render('map', {'title': 'Карта', 'active': 'map'});
+    res.render('map', {'title': 'Карта'});
 }
 
 export const timer = (req, res) => {
-    res.render('timer', {'title': 'Таймер', 'active': 'timer'});
+    res.render('timer', {'title': 'Таймер'});
 }
