@@ -1,24 +1,40 @@
 window.onpopstate = function () {
-    location.reload();
+    switch (location.pathname) {
+        case '/':
+            goToCV(false);
+            break;
+        case '/map':
+            goToMap(false);
+            break;
+        case '/timer':
+            goToTimer(false);
+            break;
+    }
 }
 
-function goToCV() {
+function goToCV(state = true) {
     document.title = "Резюме";
     document.querySelector('#content').remove();
     $('#main').load('/presets/cv.html');
-    history.pushState(null, null, '/');
+    if (state) {
+        history.pushState(null, null, '/');
+    }
 }
 
-function goToMap() {
+function goToMap(state = true) {
     document.title = "Карта";
     document.querySelector('#content').remove();
     $('#main').load('/presets/map.html');
-    history.pushState(null, null, '/map');
+    if (state) {
+        history.pushState(null, null, '/map');
+    }
 }
 
-function goToTimer() {
+function goToTimer(state = true) {
     document.title = "Таймер";
     document.querySelector('#content').remove();
     $('#main').load('/presets/timer.html');
-    history.pushState(null, null, '/timer');
+    if (state) {
+        history.pushState(null, null, '/timer');
+    }
 }
