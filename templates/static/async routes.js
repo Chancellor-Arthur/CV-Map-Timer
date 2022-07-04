@@ -1,16 +1,6 @@
-// Changing the behavior of links - <a>
-document.addEventListener('click', function (event) {
-    var element = event.target;
-
-    while (element && !element.href) {
-        element = element.parentNode;
-    }
-
-    if (element) {
-        event.preventDefault();
-        return;
-    }
-});
+window.onpopstate = function () {
+    location.reload();
+}
 
 function goToCV() {
     document.title = "Резюме";
