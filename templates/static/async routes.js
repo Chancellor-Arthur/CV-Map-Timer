@@ -1,14 +1,19 @@
 window.onpopstate = function () {
-    switch (location.pathname) {
-        case '/':
-            goToCV(false);
-            break;
-        case '/map':
-            goToMap(false);
-            break;
-        case '/timer':
-            goToTimer(false);
-            break;
+    goTo(Object.keys(dict).find(key => dict[key].path === location.pathname));
+}
+
+let dict = {
+    "cv": {title: "Резюме", path: "/", file: "/cv.html"},
+    "map": {title: "Карта", path: "/map", file: "/map.html"},
+    "timer": {title: "Таймер", path: "/timer", file: "/timer.html"}
+}
+
+function goTo(key){
+    document.title = dict[key].title;
+    document.querySelector('#content').remove();
+    $('#main').load("/presets" + dict[key].file);
+    if (location.pathname !== dict[key].path) {
+        history.pushState(null, null, dict[key].path);
     }
 }
 
